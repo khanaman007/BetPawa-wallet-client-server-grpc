@@ -27,6 +27,12 @@ This microservice  based architeture has five module or microservices as mention
  # Ready-to-run-WalletApplication - description
    This folder contains soure code, binary files(.clas) and jar file of module.one can either import this project in his/her eclipse or Intellij
     IDE and run all servce. every speficif module contains ReadMe file which has set of instructions.
+     # DB Details 
+       Bit Wallet Application has got two tables 
+        1. #bit_wallet_account
+            This tables is to store the user-baance per currency. for a given user there will as many rows as currencies supported by                the system  i.e one row per currency. At present system supports USD, GBP and EURO only.
+        2. bit_wallet_account_transaction
+           This trasactional table and contails details of each transaction user makes. This is for audit kind of activities.
     
 # build-gradle
    This is full-fledged gradle project. one can import in any IDE and proceed. One can also buld this project using CLI. Here is description of all modules or components.
