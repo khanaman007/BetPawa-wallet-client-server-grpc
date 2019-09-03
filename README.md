@@ -7,17 +7,22 @@ This microservice  based architeture has five module or microservices as mention
      for various transactions like Balance, Deposit and Withdrwa.
  5. BitWallet-Client - This simulates client to proxy server.
  # Salient Feature
-  1. # Client server Motivated with client -server styled  architecture, this system is developed and implemented on Grpc which follows http2.0 protocol.
-  2. # Server Streaming.
+  1. # Client server
+       Motivated with client-server styled  architecture,this system is developed and implemented on Grpc which follows http2.0  protocol.
+  2. # Server side Streaming.
   3. # Microservice Archietcture- CRUD Atomicity is acheived by designing atomic service 
        a) create operation - Deposit microsce.
        b) Retrieval operation- Balance Microservice.
        c) Update operation - Withdraw service.
-  4. # DB Schema- Use of Flyway plug-n with gradle or maven makes DB migration very handy.
+  4. # DB Schema- 
+         Use of Flyway plug-n with gradle or maven makes DB migration very handy.
   5. # Stub to Stub Communication.
-  6. # Load - it support cleint mult-thredaing and concurrency. you can configure number of threads per client depending on available                 cores at your plateform.
-  7. # Round- Round demarks boundaries for transaction. one can configure number of rounds per request.
-  8. # GRPC stub pooling - this system exploit roustness of # managed channel for GRPC stub pooling.
+  6. # Load - 
+        it support cleint mult-thredaing and concurrency. you can configure number of threads per client depending on available                 cores at your plateform.
+  7. # Round-
+         Round demarks boundaries for transaction. one can configure number of rounds per request.
+  8. # GRPC stub pooling -
+        this system exploit roustness of # managed channel for GRPC stub pooling.
   
  # Ready-to-run-WalletApplication - description
    This folder contains soure code, binary files(.clas) and jar file of module.one can either import this project in his/her eclipse or Intellij
