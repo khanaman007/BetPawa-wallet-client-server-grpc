@@ -1,0 +1,13 @@
+This module is developed as Springboot application.
+This act as  client to Gateway Proxy service.
+If you want to run under Docker container, please use following commands
+
+entry port 1010:1010
+
+docker build -f Dockerfile -t deposit:v0.1
+docker run -p 1010:1010 deposit
+
+
+If you want to run  as an standalone application not inside without Docker , 
+use following  command, this will start application at port 1010.
+java -jar target/bitWallet-deposit-0.0.1-SNAPSHOT.jar

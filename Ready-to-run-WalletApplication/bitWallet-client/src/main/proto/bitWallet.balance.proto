@@ -1,0 +1,30 @@
+syntax = "proto3";
+import "google/protobuf/descriptor.proto";
+
+
+option java_outer_classname = "IBalance";
+option java_package = "com.betPawa.bitWallet";
+
+//option optimize_for = LITE_RUNTIME;
+
+
+message BalanceRequest{
+ int64 userId=1;
+}
+message BalanceResponse{
+ int64 userId=1;
+ message Statement{
+ string currencyType =1;
+ double amount=2;
+ }
+ repeated Statement statement=2;
+}
+
+
+ 
+
+
+service BitWallletBalanceService {
+      rpc Balance(BalanceRequest) returns (BalanceResponse);
+
+}

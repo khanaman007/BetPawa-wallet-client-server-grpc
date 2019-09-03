@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "deposit.proto";
+import "balance.proto";
+import "withdraw.proto";
+option java_outer_classname = "IServer";
+option java_package = "com.betPawa.bitWallet";
+//option optimize_for = LITE_RUNTIME;
+
+service BitWallletService {
+      rpc Deposit(DepositRequest) returns (EmpltyResponse);
+      rpc Balance(BalanceRequest) returns (BalanceResponse);
+      rpc Withdraw(WithdrawRequest) returns (WithdrawResponse);
+      
+      }

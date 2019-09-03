@@ -1,0 +1,13 @@
+This module is developed as Springboot application.
+This act as  client to Gateway Proxy service.
+If you want to run under Docker container, please use following commands
+
+entry port 8081:8081
+
+docker build -f Dockerfile -t proxyserver:v0.1
+docker run -p 8081:8081 proxyserver
+
+If you want to run  as an standalone application not inside without Docker , 
+use following  command, this will start application at port 8081.
+java -jar target/bitWallet-server-0.0.1-SNAPSHOT.jar
+

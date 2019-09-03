@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+
+option java_outer_classname = "IDeposit";
+option java_package = "com.betPawa.bitWallet";
+//option optimize_for = LITE_RUNTIME;
+
+
+message DepositRequest {
+   int64 userId = 1;
+  double amount = 2;
+  string currency = 3;
+}
+
+ 
+
+message EmpltyResponse {
+  }
+
+
+service BitWallletDepositService {
+  rpc Deposit(DepositRequest) returns (EmpltyResponse);
+
+}

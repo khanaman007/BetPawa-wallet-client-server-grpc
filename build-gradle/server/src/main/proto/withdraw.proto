@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+
+option java_outer_classname = "IWithdraw";
+option java_package = "com.betPawa.bitWallet";
+//option optimize_for = LITE_RUNTIME;
+
+
+message WithdrawRequest {
+   int64 userId = 1;
+   string currency = 3;
+   double amount=2;
+}
+message WithdrawResponse{
+  }
+
+
+
+service BitWallletWithdrawService {
+    rpc Withdraw(WithdrawRequest) returns (WithdrawResponse);
+
+}

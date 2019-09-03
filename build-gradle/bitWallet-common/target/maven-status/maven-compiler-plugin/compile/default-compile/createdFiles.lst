@@ -1,0 +1,4 @@
+com\betPawa\bitWallet\common\model\BitWalletAccount.class
+com\betPawa\bitWallet\common\SpringGrpcApplication.class
+com\betPawa\bitWallet\common\dao\IBitWalletRepository.class
+com\betPawa\bitWallet\common\CurrencyType.class
