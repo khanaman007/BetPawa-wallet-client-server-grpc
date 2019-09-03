@@ -1,0 +1,12 @@
+This module is developed as Springboot application.
+This provides you  withdraw-fund  service.
+If you want to run under Docker container, please use following commands
+
+entry port 1101:1101
+
+docker build -f Dockerfile -t withdraw:v0.1
+docker run -p 1101:1101 withdraw 
+
+If you want to run  as an standalone application not inside without Docker , 
+use following  command, this will start application at port 1101.
+java -jar target/bitWallet-withdraw-0.0.1-SNAPSHOT.jar
