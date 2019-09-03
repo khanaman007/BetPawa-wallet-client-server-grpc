@@ -150,7 +150,7 @@ This microservice  based architeture has five module or microservices as mention
         2. docker run -p 8080:8080 deposit:v0.1
     5. move to bitWallet-client module and build Docker image for clinet  service.
         1. docker build -t cleint:v0.1 .
-        2. docker run -p 8081:8081 cleint:v0.1
+        2. docker run -p 8081:8081 cleint:v0.1 --concurrent.users=10 \ --concurrent.threads.per.user=64 \ --rounds.per.thread=16
      
  # Note
    Every module has its owner Dockerfie , please use this file to change port or other configurtion.
