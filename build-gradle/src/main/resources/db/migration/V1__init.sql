@@ -1,26 +1,15 @@
-CREATE TABLE bit_wallet_account
-(
-  bit_wallet_id bigint NOT NULL,
-  wallet_amount double precision,
-  currency_name character varying(255),
-  CONSTRAINT bit_wallet_account_pkey PRIMARY KEY (bit_wallet_id)
-)
-WITH (
-  OIDS=FALSE
+CREATE TABLE `bit_wallet_account` (
+  `bit_wallet_id` int(11) NOT NULL,
+  `wallet_amount` double NOT NULL,
+  `currency_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`bit_wallet_id`,`currency_name`)
 );
-ALTER TABLE bit_wallet_account
-  OWNER TO postgres;
-  CREATE TABLE public.bit_wallet_account_transaction
-(
-  bit_wallet_id bigint,
-  wallet_amount double precision,
-  currency_name character varying(255),
-  transaction character varying(255),
-  "timestamp" timestamp with time zone,
-  id bigint
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE bit_wallet_account
-  OWNER TO postgres;
+CREATE TABLE `bit_wallet_account_transaction` (
+  `bit_wallet_id` int(11) NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `currency_name` varchar(45) NOT NULL,
+  `wallet_amount` double NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
