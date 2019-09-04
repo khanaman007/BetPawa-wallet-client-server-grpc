@@ -6,6 +6,9 @@ This microservice  based architeture has five module or microservices as mention
  4. BitWallt-Server  microservice- This service is kind of proxy service which interactts with other above mentioned services
      for various transactions like Balance, Deposit and Withdrwa.
  5. BitWallet-Client - This simulates client to proxy server.
+ 
+ # Architectural diagram
+  ![alt text](BitWallet_architectural_diagram.png)
  # Salient Feature
   1. # Client server
        Motivated with client-server styled  architecture,this system is developed and implemented on Grpc which follows http2.0  protocol.
