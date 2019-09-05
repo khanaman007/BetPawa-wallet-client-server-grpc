@@ -4,12 +4,22 @@
 buildscript {
   repositories {
     mavenCentral()
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
   }
   dependencies {
-    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
+      classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
+        classpath 'gradle.plugin.com.boxfuse.client:gradle-plugin-publishing:6.0.1'
+     
+     classpath 'mysql:mysql-connector-java:8.0.12'
     classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
     
   }
+
+}
+plugins {
+  id "org.flywaydb.flyway" version "6.0.1"
 }
 allprojects {
     group = 'com.betPawa.bitWallet'
@@ -18,12 +28,16 @@ allprojects {
 
 subprojects {
     
-    apply plugin: 'java'
+ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'com.google.protobuf'
+apply plugin: 'com.google.protobuf'
+
+
+
+
    
 
 
@@ -40,11 +54,11 @@ targetCompatibility = 1.8
         compile 'mysql:mysql-connector-java'
         compile 'org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE'
         compile 'io.github.lognet:grpc-spring-boot-starter:3.0.0'
-        compile 'org.flywaydb:flyway-core:6.0.1'
-       
-		
+         compile 'org.flywaydb:flyway-core:6.0.1'
+        
         testCompile 'org.springframework.boot:spring-boot-starter-test:2.1.6.RELEASE'
     }
+    
     sourceSets {
     main {
         proto {
@@ -72,7 +86,18 @@ protobuf {
         }
     }
 }
+   }
+    flywayMigrate{
+  
+    url = 'jdbc:mysql://localhost:3306/hibernate4?allowPublicKeyRetrieval=true&useSSL=false&verifyServerCertificate=false'
+    user = 'root'
+    password = 'Welcome@123'
+    baselineOnMigrate='false'
+     validateOnMigrate = 'true'
+    placeholders = [
+        'keyABC': 'valueXYZ',
+        'otherplaceholder': 'value123'
+    ]
    
-
-   
-}
+} 
+    
